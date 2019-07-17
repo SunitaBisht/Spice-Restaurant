@@ -6,6 +6,21 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\font-awesome\NewFolder\**" />
+    <Compile Remove="wwwroot\lib\fontawesome-free-5.9.0-web\**" />
+    <Compile Remove="wwwroot\Plugins\**" />
+    <Content Remove="wwwroot\lib\font-awesome\NewFolder\**" />
+    <Content Remove="wwwroot\lib\fontawesome-free-5.9.0-web\**" />
+    <Content Remove="wwwroot\Plugins\**" />
+    <EmbeddedResource Remove="wwwroot\lib\font-awesome\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\lib\fontawesome-free-5.9.0-web\**" />
+    <EmbeddedResource Remove="wwwroot\Plugins\**" />
+    <None Remove="wwwroot\lib\font-awesome\NewFolder\**" />
+    <None Remove="wwwroot\lib\fontawesome-free-5.9.0-web\**" />
+    <None Remove="wwwroot\Plugins\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="FontAwesome" Version="4.7.0" />

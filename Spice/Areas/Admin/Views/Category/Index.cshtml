@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<br /><br />
+<br/><br/>
 <div class=" border backgroundWhite">
     <div class="row">
         <div class=" col-6">
@@ -12,35 +12,32 @@
         </div>
         <div class="col-6 text-right">
          
-            <partial name="_CreatebuttonPartial" />
+            <partial name="_CreatebuttonPartial"/>
         </div>
-        </div>
+       </div>
         <br />
         <div>
             @if(Model.Count()>0)
             {
-                <table class=" table-striped border">
+                <table class="table table-striped border">
                     <tr class="table-secondary">
-
                         <th>
-                            @Html.DisplayNameFor(m => m.Name)
+                            @Html.DisplayNameFor(m =>m.Name)
                         </th>
                         <th></th>
                         <th></th>
                     </tr>
-                    @foreach (var item in Model)
+                        @foreach(var item in Model)
                     {
                         <tr>
                             <td>
                                 @Html.DisplayFor(m => item.Name)
                             </td>
                             <td>
-                                EDIT|DELETE|DETAILS
+                               <partial name="_TableButtonPartial" model="item.Id"/>
                             </td>
                         </tr>
-
-                    }
-
+                     }
                 </table>
             }
             else
@@ -48,5 +45,5 @@
                 <p>No Category exists.....</p>
             }
         </div>
-    </div>
+   </div>
 
