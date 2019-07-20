@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Spice.Areas.Admin.Controllers;
 using Spice.Models;
 
 namespace Spice.Data
@@ -18,5 +19,12 @@ namespace Spice.Data
         /// </summary>
         public DbSet<Category> Category { get; set; }
         public DbSet<SubCategory> SubCategory { get; set; }
+
+        public DbSet<MenuItem> MenuItem { get; set;}
+
+        public static implicit operator ApplicationDbContext(ApplicationContext v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
