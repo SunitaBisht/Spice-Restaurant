@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Spice-Restaurant</title>
 
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <enviorment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+       </enviorment>
+   
+    <enviorment exclude="Development">
+        <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    </enviorment>
+
+        <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
 <body class="search-background">
@@ -59,10 +65,17 @@
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <environment include="Development">
+        <script src="https://cdn.tiny.cloud/1/owyl74psb4me8vjt7fxdiseo8lf8mrw6kf10evu2ky4lgcws/tinymce/5/tinymce.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
 
-    @RenderSection("Scripts", required: false)
+        <environment exclude="Development">
+            <script src="https://cdn.tiny.cloud/1/owyl74psb4me8vjt7fxdiseo8lf8mrw6kf10evu2ky4lgcws/tinymce/5/tinymce.min.js"></script>
+        </environment>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -25,7 +25,7 @@ namespace Spice.Models
         public virtual Category Category { get; set;}
 
 
-        [Display(Name = "SubCategory")]
+        [Display(Name="SubCategory")]
         public int SubCategoryId { get; set;}
 
 
@@ -33,7 +33,7 @@ namespace Spice.Models
         public virtual SubCategory SubCategory { get; set; }
 
 
-        [Range(100,int.MaxValue, ErrorMessage="Price should be greater then Rupey{100}" )]
+        [Range(100,int.MaxValue, ErrorMessage="Price should be greater then rupey{100}")]
         public double Price { get; set;}
         
 

@@ -10,8 +10,7 @@ namespace Spice.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
         }
         /// <summary>
@@ -22,9 +21,5 @@ namespace Spice.Data
 
         public DbSet<MenuItem> MenuItem { get; set;}
 
-        public static implicit operator ApplicationDbContext(ApplicationContext v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
