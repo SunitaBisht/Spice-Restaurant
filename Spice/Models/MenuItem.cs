@@ -33,9 +33,7 @@ namespace Spice.Models
         public virtual SubCategory SubCategory { get; set; }
 
 
-        [Range(100,int.MaxValue, ErrorMessage="Price should be greater then rupey{100}")]
+        [Range(50 ,int.MaxValue, ErrorMessage="Price should be greater then Rupey{50}")]
         public double Price { get; set;}
-        
-
     }
 }
