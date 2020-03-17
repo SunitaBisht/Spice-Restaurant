@@ -11,7 +11,7 @@ namespace Spice.Controllers
     [Area("Customer")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index()  // action method
         {
             return View();
         }
