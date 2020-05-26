@@ -30,7 +30,7 @@ namespace Spice.Areas.Admin.Controllers
         //POST-CREATE
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Coupon coupons)               //bind property
+        public async Task<IActionResult> Create(Coupon coupon)               //bind property
         {
             if (ModelState.IsValid)
             {
@@ -46,14 +46,14 @@ namespace Spice.Areas.Admin.Controllers
                             p1 = ms1.ToArray();
                         }
                     }
-                    coupons.Picture = p1;
+                    coupon.Picture = p1;
 
                 }
-                _db.Coupon.Add(coupons);
+                _db.Coupon.Add(coupon);
                 await _db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(coupons);
+            return View(coupon);
         }
 
         //GET-EDIT
@@ -76,14 +76,14 @@ namespace Spice.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Coupon coupons)
+        public async Task<IActionResult> Edit(Coupon coupon)
         {
-            if (coupons.Id == 0)
+            if (coupon.Id == 0)
             {
                 return NotFound();
             }
 
-            var couponFromDb = await _db.Coupon.Where(c => c.Id == coupons.Id).FirstOrDefaultAsync();
+            var couponFromDb = await _db.Coupon.Where(c => c.Id == coupon.Id).FirstOrDefaultAsync();
 
             if (ModelState.IsValid)
             {
@@ -101,16 +101,16 @@ namespace Spice.Areas.Admin.Controllers
                     }
                     couponFromDb.Picture = p1;
                 }
-                couponFromDb.MinimumAmmount = coupons.MinimumAmmount;
-                couponFromDb.Name = coupons.Name;
-                couponFromDb.Discount = coupons.Discount;
-                couponFromDb.CouponType = coupons.CouponType;
-                couponFromDb.IsActive = coupons.IsActive;
+                couponFromDb.MinimumAmount = coupon.MinimumAmount;
+                couponFromDb.Name = coupon.Name;
+                couponFromDb.Discount = coupon.Discount;
+                couponFromDb.CouponType = coupon.CouponType;
+                couponFromDb.IsActive = coupon.IsActive;
 
                 await _db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(coupons);
+            return View(coupon);
         }
 
         //GET-DETAILS

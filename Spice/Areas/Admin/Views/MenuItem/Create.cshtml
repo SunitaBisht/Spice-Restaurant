@@ -24,12 +24,12 @@
 
         <div class="form-group row">
             <div class="col-2">
-                <label asp-for=" MenuItem.Discription" class="col-form-label"></label>
+                <label asp-for=" MenuItem.Description" class="col-form-label"></label>
             </div>
             <div class="col-5">
-                @Html.TextAreaFor(m => m.MenuItem.Discription)
+                @Html.TextAreaFor(m => m.MenuItem.Description)
             </div>
-            <span asp-validation-for="MenuItem.Discription" class=" text-danger"></span>
+            <span asp-validation-for="MenuItem.Description" class=" text-danger"></span>
         </div>
 
         <div class="form-group row">

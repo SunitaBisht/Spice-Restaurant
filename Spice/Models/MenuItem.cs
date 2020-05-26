@@ -13,7 +13,7 @@ namespace Spice.Models
 		[Required]
 		public string Name { get; set; }
 		[Required]
-		public string Discription { get; set; }
+		public string Description { get; set; }
 		[Required]
 
 		public string Spicyness { get; set; }
@@ -27,10 +27,8 @@ namespace Spice.Models
 		[Foreignkey("CategoryId")]
 		public virtual Category Category { get; set; }
 
-
 		[Display(Name = "SubCategory")]
 		public int SubCategoryId { get; set; }
-
 
 		[Foreignkey("SubCategoryId")]
 		public virtual SubCategory SubCategory { get; set; }
