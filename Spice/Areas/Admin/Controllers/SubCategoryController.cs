@@ -109,7 +109,7 @@ namespace Spice.Areas.Admin.Controllers
             return Json(new SelectList(subCategories, "Id", "Name"));
         }
 
-         /// <summary>
+        /// <summary>
         /// Get-Edit
         /// </summary>
         /// <returns>View Model</returns>
@@ -173,12 +173,12 @@ namespace Spice.Areas.Admin.Controllers
             };
             return View(modelvm);
         }
-         /// <summary>
+        /// <summary>
         /// Get-Details
         /// </summary>
         /// <param name="id"></param>
         /// <returns>View Category Detail</returns>
-      
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -209,23 +209,21 @@ namespace Spice.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-              return View(subCategory);
+            return View(subCategory);
         }
-     /// <summary>
-    /// POST-DELETE
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns>select Category delete</returns>
+        /// <summary>
+        /// POST-DELETE
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>select Category delete</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var subCategory = await _db.SubCategory.SingleOrDefaultAsync(m =>m.Id ==id);
+            var subCategory = await _db.SubCategory.SingleOrDefaultAsync(m => m.Id == id);
             _db.SubCategory.Remove(subCategory);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
         }
-        
     }
 }
